@@ -347,7 +347,7 @@ async def pay(shipped:Shipped, current_user : User = Depends(get_current_active_
 def callback( trxref, reference, db: Session = Depends(get_db)):
     
     url = "https://api.paystack.co/transaction/verify/:{reference}"
-    headers = {"Authorization": "Bearer sk_test_ecb81509f58a30dcdafc38bb05e25365fd97dc22"}
+    headers = {"Authorization": "Bearer "}
     response = requests.get(url, headers = headers)
     json_Response = response.json()
     return (json_Response)
